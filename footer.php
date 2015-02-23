@@ -1,1 +1,1 @@
-<footer><div class="texto-footer">Todos os direitos reservados - <?php echo date('Y'); ?></div></footer>
+<footer><div class="texto-footer">Todos os direitos reservados - <?php date_default_timezone_set('America/Sao_Paulo'); echo date('Y'); ?></div></footer>
