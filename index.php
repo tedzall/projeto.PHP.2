@@ -2,6 +2,9 @@
 	require_once("config.php");
 	require_once("functions.php");
 
+	ini_set("display_errors", true);
+	error_reporting(E_ALL);
+
 	$url = "http://" . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	$rota = getRota($url,$dataMenu);
 ?>
@@ -55,7 +58,7 @@
         		<ul class="menu-bar">
 <?php 
 	foreach($dataMenu as $menu){
-		echo '<li class="'.( ('home'==$menu)?'home':'' ).( ($conteudo==$menu)?' active':'' ).'"><a href="'.$menu.'">'.ucfirst($menu).'</a></li>';
+		echo '<li class="'.($rota==$menu?'active':'').'"><a href="'.$menu.'">'.ucfirst($menu).'</a></li>';
 	}
 ?>        			
             	</ul>
